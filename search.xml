@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HEXO更改字体</title>
+      <link href="/2024/05/04/HEXO%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93/"/>
+      <url>/2024/05/04/HEXO%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HEXO更改字体"><a href="#HEXO更改字体" class="headerlink" title="HEXO更改字体"></a>HEXO更改字体</h1><p>hexo自带的字体很不好看，可能是创始人是台湾的原因？字体有一种简繁之间的感觉，看着有点别扭，于是想着更改一下字体。</p><p>参考教程：</p><p><a href="https://www.luxiyue.com/server/%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9hexo%E4%B8%BB%E9%A2%98%EF%BC%9Abutterfly%E7%BD%91%E7%AB%99%E5%AD%97%E4%BD%93/">如何修改Hexo主题：Butterfly网站字体</a></p><p><a href="https://blog.aizhiqian.xyz/posts/ca2ce3bc/">【Hexo】自定义字体</a></p><p>参考以上教程，我是这么操作的：</p><ol><li><p>在<code>/source</code>目录下创建存储字体的文件夹<code>font</code>和存储css的文件夹<code>css</code></p></li><li><p>字体网站下载喜欢的字体，我用的是<a href="https://fonts.google.com/">谷歌字体</a>，将下载好的字体存储到<code>/source/font</code>文件夹中</p></li><li><p>在<code>/source/css</code>文件夹中创建文件<code>custom.css</code></p></li><li><p>编写<code>custom.css</code>文件</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="comment">/* 为载入的字体取名字(随意) */</span></span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;Junbo Font&#x27;</span>;</span><br><span class="line">    <span class="comment">/* 字体文件地址(相对或者绝对路径都可以) */</span></span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;/font/sunny-spells-basic-font/SunnySpellsBasicRegular-Yz1Wv.ttf&#x27;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>);</span><br><span class="line">    <span class="comment">/* 定义加粗样式(加粗多少) */</span></span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="comment">/* 定义字体样式(斜体/非斜体) */</span></span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">    <span class="comment">/* 定义显示样式 */</span></span><br><span class="line">    <span class="attribute">font-display</span>: block;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li><li><p>在<code>_config.butterfly.yml</code>中修改inject部分为：</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/custom.css&quot;&gt;</span><span class="comment"># custom.css文件</span></span><br><span class="line">    <span class="comment"># - &lt;link rel=&quot;stylesheet&quot; href=&quot;/xxx.css&quot;&gt;</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="comment"># - &lt;script src=&quot;xxxx&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>再在<code>_config.butterfly.yml</code>中修改字体font为：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">global-font-size:</span> <span class="string">&#x27;18px&#x27;</span><span class="comment"># 全局字体大小</span></span><br><span class="line">  <span class="attr">code-font-size:</span> <span class="string">&#x27;14px&#x27;</span><span class="comment"># 代码字体大小</span></span><br><span class="line">  <span class="attr">font-family:</span> <span class="string">apple-system</span> <span class="comment"># Junbo Font# 全局字体的样式（更改为你喜欢的字体）</span></span><br><span class="line">  <span class="comment"># -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Lato, Roboto, &quot;PingFang SC&quot;, &quot;Microsoft JhengHei&quot;, &quot;Microsoft YaHei&quot;, sans-serif</span></span><br><span class="line">  <span class="attr">code-font-family:</span> <span class="string">consolas,</span> <span class="string">Menlo,</span> <span class="string">&quot;PingFang SC&quot;</span><span class="string">,</span> <span class="string">&quot;Microsoft JhengHei&quot;</span><span class="string">,</span> <span class="string">&quot;Microsoft YaHei&quot;</span><span class="string">,</span> <span class="string">sans-serif</span><span class="comment"># 代码字体样式，同上</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> HEXO建站指南 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HEXO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo插入图片</title>
       <link href="/2024/05/04/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/"/>
       <url>/2024/05/04/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
@@ -13,7 +38,7 @@
       
       <categories>
           
-          <category> HEXO图片插入指南 </category>
+          <category> HEXO建站指南 </category>
           
       </categories>
       
