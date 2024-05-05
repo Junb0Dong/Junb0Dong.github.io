@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HEXO展示pdf</title>
+      <link href="/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/"/>
+      <url>/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/</url>
+      
+        <content type="html"><![CDATA[<div class="row">    <embed src="20211218-ORB-SLAM3课程电子书【课件】.pdf" width="100%" height="550" type="application/pdf"></div><h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://blog.justlovesmile.top/posts/7376.html?time=1714893303622">Hexo博客 | Hexo竟然可以展示PDF</a></p><p><strong>一遍成功，随便放了个pdf上去</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HEXO建站指南 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HEXO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SLAM_JOURNEY</title>
       <link href="/2024/05/05/SLAM_JOURNEY/"/>
       <url>/2024/05/05/SLAM_JOURNEY/</url>
