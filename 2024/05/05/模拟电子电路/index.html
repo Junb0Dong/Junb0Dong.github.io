@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>模拟电子电路 | Junbo Blog</title><meta name="author" content="Junbo Dong"><meta name="copyright" content="Junbo Dong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="模拟电子电路第一章 绪论按时间和幅值的连续性和离散性把信号分为四类：2*2自由组合 输入电阻： 表示了某种放大电路从信号源吸取信号能力的大小 输出电阻： 影响着它带负载的能力，当负载变化时，输出量变化很小或基本不变表示带负载能力强 增益Amplifier： 将供电电源能量转换为信号能量的能力 频率失真： 由线性电抗元件引起的失真  幅度失真： 由于放大电路的带宽所限，导致对不同频率信号幅值的放大倍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟电子电路">
+<meta property="og:url" content="https://junb0dong.github.io/2024/05/05/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/index.html">
+<meta property="og:site_name" content="Junbo Blog">
+<meta property="og:description" content="模拟电子电路第一章 绪论按时间和幅值的连续性和离散性把信号分为四类：2*2自由组合 输入电阻： 表示了某种放大电路从信号源吸取信号能力的大小 输出电阻： 影响着它带负载的能力，当负载变化时，输出量变化很小或基本不变表示带负载能力强 增益Amplifier： 将供电电源能量转换为信号能量的能力 频率失真： 由线性电抗元件引起的失真  幅度失真： 由于放大电路的带宽所限，导致对不同频率信号幅值的放大倍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://junb0dong.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2024-05-05T13:55:59.000Z">
+<meta property="article:modified_time" content="2024-05-05T12:51:45.983Z">
+<meta property="article:author" content="Junbo Dong">
+<meta property="article:tag" content="本科推免">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://junb0dong.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/image/logo.png"><link rel="canonical" href="https://junb0dong.github.io/2024/05/05/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Junbo Dong","link":"链接: ","source":"来源: Junbo Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '模拟电子电路',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-05 20:51:45'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.jpg" onerror="onerror=null;src='/image/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/image/top_image.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Junbo Blog"><span class="site-name">Junbo Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">模拟电子电路</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-05T13:55:59.000Z" title="发表于 2024-05-05 21:55:59">2024-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-05T12:51:45.983Z" title="更新于 2024-05-05 20:51:45">2024-05-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91%E6%8E%A8%E5%85%8D/">本科推免</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91%E6%8E%A8%E5%85%8D/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0/">面试知识复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="模拟电子电路"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="模拟电子电路"><a href="#模拟电子电路" class="headerlink" title="模拟电子电路"></a>模拟电子电路</h1><h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h3><p><strong>按时间和幅值的连续性和离散性把信号分为四类</strong>：2*2自由组合</p>
+<p><strong>输入电阻：</strong> 表示了某种放大电路从信号源吸取信号能力的大小</p>
+<p><strong>输出电阻：</strong> 影响着它带负载的能力，当负载变化时，输出量变化很小或基本不变表示带负载能力强</p>
+<p><strong>增益Amplifier：</strong> 将供电电源能量转换为信号能量的能力</p>
+<p><strong>频率失真：</strong> 由线性电抗元件引起的失真</p>
+<blockquote>
+<p><strong>幅度失真：</strong> 由于放大电路的带宽所限，导致对不同频率信号幅值的放大倍数不同而产生的失真称为幅度失真</p>
+<p><strong>相位失真：</strong> 放大电路对不同频率的信号产生的时延不同</p>
+</blockquote>
+<h3 id="第二章-运算放大器"><a href="#第二章-运算放大器" class="headerlink" title="第二章 运算放大器"></a>第二章 运算放大器</h3><p>运算放大器的电压传输特性具有两个区域：<strong>线性区</strong>，<strong>饱和区</strong>，为使由集成运放所组成的各种应用电路能稳定地工作在<strong>线性区</strong>，<strong>必须引入负反馈</strong>，是将运放输出端与反相输入端通过其他元件相连形成负反馈共同构成<strong>闭环状态</strong></p>
+<p><strong>理想运算放大器：</strong></p>
+<ul>
+<li><p>开环电压增益$A_{vo}\rightarrow\infty$</p>
+</li>
+<li><p>$r_i\rightarrow \infty$</p>
+</li>
+<li><p>$r_o\rightarrow0$</p>
+</li>
+<li><p>开环带宽$BW\rightarrow\infty$</p>
+</li>
+</ul>
+<p><strong>同相放大电路：</strong> 加到两输入端的电压大小接近相等。输入输出相位相同时它在闭环工作状态下的特征。$A_v\ge1,R_i\rightarrow\infty,R_o\rightarrow0$</p>
+<blockquote>
+<p>闭环系统。存在深度负反馈，深度负反馈是虚短的条件</p>
+<p>个人理解：同相放大器相当于自控中的闭环比例控制，开环增益为无穷大，导致他的位置误差趋向于0</p>
+</blockquote>
+<p><strong>电压跟随器：</strong> 单位反馈的同相放大电路，$R_i\rightarrow\infty,R_o\rightarrow0$</p>
+<blockquote>
+<p>在电路中常用作<strong>阻抗变换器</strong>或功率放大器，一般接在高阻信号源和低阻负载之间</p>
+</blockquote>
+<p><strong>反相放大电路：</strong> 输入输出反向，$R_i = R_1,R_o\rightarrow0$，具有低输入电阻</p>
+<blockquote>
+<p><strong>特征：</strong> 存在虚地（同相端接地，由虚短可得）</p>
+</blockquote>
+<p><strong>同相输入和反相输入放大电路的其他应用：</strong></p>
+<ul>
+<li><p><strong>求差电路：</strong></p>
+</li>
+<li><p><strong>仪用放大电路：</strong> 抑制共模信号，抑制干扰信号能力强</p>
+</li>
+<li><p><strong>求和电路：</strong></p>
+</li>
+<li><p><strong>积分电路：</strong> 先电阻后电容，微分电路相反</p>
+</li>
+</ul>
+<h3 id="第三章-二极管及其基本电路"><a href="#第三章-二极管及其基本电路" class="headerlink" title="第三章 二极管及其基本电路"></a>第三章 二极管及其基本电路</h3><p><strong>雪崩击穿：</strong> 反向电流极急剧增大，电击穿，可逆</p>
+<p><strong>齐纳击穿：</strong> 多用于稳压电路，电击穿，可逆</p>
+<p><strong>热击穿：</strong> 不好，会烧毁二极管，不可逆，尽量避免</p>
+<p><strong>二极管：</strong> $i_D = I_S(e^{v_D\over v_T}-1),i_D$：流过二极管的电流，$I_S$：反向饱和电流，$v_D$：二极管两端电压，$v_T$ 温度电压当量 <em>硅管死区电压0.5v，锗管0.1v。硅管导通电压0.7v,锗管0.2v</em></p>
+<ul>
+<li><p><strong>理想模型：</strong> 相当于一个开关</p>
+</li>
+<li><p><strong>恒压降模型：</strong> 过了导通电压相当于一个理想开关</p>
+</li>
+<li><p><strong>折线模型：</strong> 开关串联电阻$r_D = 200\Omega$</p>
+</li>
+</ul>
+<p><strong>二极管的应用：</strong> 整流电路，限幅与钳位电路，开关电路</p>
+<p><strong>特殊二极管：</strong></p>
+<blockquote>
+<p>齐纳二极管：反向击穿，用于稳压</p>
+<p>变容二极管：利用结电容，用于高频技术中</p>
+<p>肖特基二极管：电容效应小，工作速度快，但反向击穿电压较低</p>
+<p>光电器件：</p>
+</blockquote>
+<h3 id="第四章-场效应三极管及其放大电路"><a href="#第四章-场效应三极管及其放大电路" class="headerlink" title="第四章 场效应三极管及其放大电路"></a>第四章 场效应三极管及其放大电路</h3><p>场效应管是一种专门利用电场效应来控制其电流大小的半导体器件。这种器件不仅兼有体积小、重量轻、耗电省、寿命长的特点，而且还有输入阻抗高、噪声低、抗辐射能力强和制造工艺简单的优点。</p>
+<p><strong>I-V 特性曲线及其特性方程</strong></p>
+<ol>
+<li><p><strong>输出特性及其特性方程</strong></p>
+<p>MOSFET的输出特性是指在栅源电压v<em>{GS}一定的情况下，漏极电流i_D与漏源电压v</em>{DS}之间的关系，即 <strong>i<em>D = f(v</em>{DS})|<em>{v</em>{GS}=常数}</strong></p>
+<ul>
+<li><p>截止区：当v_{GS}</p>
+</li>
+<li><p>可变电阻区：v<em>{GS}&gt;V</em>{TN}, 其i<em>D=K_n[2(v</em>{GS}-V<em>{TN})v</em>{GS}-v<em>{DS}^2], 直观理解：在可变电阻区，输出特性的斜率随v</em>{GS}变化明显</p>
+</li>
+<li><p>饱和区（恒流区又称放大区）：v<em>{GS}\ge V</em>{TN}, 可近似看为i<em>D不随v</em>{DS}变化</p>
+</li>
+</ul>
+</li>
+<li><p><strong>转移特性：</strong> FET是电压控制器件，所谓转移特性是在漏源电压v<em>{DS}一定的条件下，栅源电压v</em>{GS}对漏极电流i_D的控制特性</p>
+</li>
+</ol>
+<p><strong>N沟道耗尽型MOSFET:</strong> 栅源电压称为夹断电压(截止电压)V_{PN}</p>
+<p><strong>沟道长度调制效应等几种效应：</strong></p>
+<ol>
+<li><p>沟道长度调制效应：early电压</p>
+</li>
+<li><p>衬底调制效应</p>
+</li>
+<li><p>温度效应：MOS管提供了一种反馈条件，自然限制了沟道电流，保证了功率MOS管的稳定运行</p>
+</li>
+<li><p>击穿效应</p>
+</li>
+</ol>
+<p><strong>静态工作点求法：</strong></p>
+<ol>
+<li><p>画出放大电路的直流通路，标出各电流、电压</p>
+</li>
+<li><p>计算静态工作点参数I<em>{DQ}=K_n(V</em>{GSQ}-V_{TN})^2</p>
+</li>
+</ol>
+<p><strong>图解分析法：</strong> 适用于交流信号幅值较大的情况，可能会产生饱和失真和截止失真</p>
+<p><strong>小信号模型分析法：</strong></p>
+<ol>
+<li><p>求静态值</p>
+</li>
+<li><p>求FET的互导和输出电阻</p>
+</li>
+<li><p>画出电路的交流小信号等效模型</p>
+</li>
+</ol>
+<p><strong>带源极电阻的共源极放大电路：</strong></p>
+<ul>
+<li><p>源极电阻的作用？稳定静态工作点</p>
+</li>
+<li><p>副作用？降低电压增益</p>
+</li>
+<li><p>如何解决？并联旁路电容，交流分析时短路源极电阻</p>
+</li>
+</ul>
+<p><strong>三种放大电路的比较：</strong></p>
+<p><strong>结型场效应管（JFET）及其放大电路：</strong> 与耗尽型MOSFET相似</p>
+<ol>
+<li><p>JFET栅极，沟道之间的PN结是反向偏置的，因此，其i_G\approx 0,其输入人电阻的阻值很高</p>
+</li>
+<li><p>JFET是电压控制电流器件，i<em>D受v</em>{GS}控制</p>
+</li>
+<li><p>预夹断前，i<em>D与v</em>{DS}呈近似线性关系；预夹断后，i_D趋向于饱和</p>
+</li>
+</ol>
+<p><strong>场效应管大集合</strong></p>
+<h3 id="第五章-双极结型三极管（BJT）及其放大电路"><a href="#第五章-双极结型三极管（BJT）及其放大电路" class="headerlink" title="第五章 双极结型三极管（BJT）及其放大电路"></a>第五章 双极结型三极管（BJT）及其放大电路</h3><p><strong>\beta:</strong> 共射级电流放大系数</p>
+<p><strong>共射级连接时的I-V特性曲线：</strong></p>
+<ol>
+<li><p>输入特性曲线：描述了当输出电压v<em>{CE}为某一数值时，输入电流i_B与输入电压v</em>{BE}之间的关系，用函数表示为i<em>B=f(v</em>{BE})|<em>{v</em>{CE}=常数}</p>
+</li>
+<li><p>输出特性：i<em>C=f(v</em>{CE}|_{i_B=常数})</p>
+<ul>
+<li><p>放大区：发射结正偏电压大于开启电压，而集电结反偏。在放大区域内，BJT输出特性曲线的特点是各条曲线几乎与坐标轴平行，但随着v_{CE}的增加，各条曲线略向上倾斜，这就是基区宽度调制效应。</p>
+</li>
+<li><p>饱和区：发射结和集电结都正偏，该区域内，v_{CE}</p>
+</li>
+<li><p>截止区：集电结反偏，发射结上偏置电压小于PN结的开启电压,发射极电流$i_E=0$</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>饱和失真：</strong> Q点过高而产生的失真称为饱和失真，同MOSFET</p>
+<p><strong>截止失真：</strong> Q点过低，同MOSFET</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://junb0dong.github.io">Junbo Dong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://junb0dong.github.io/2024/05/05/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/">https://junb0dong.github.io/2024/05/05/模拟电子电路/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://junb0dong.github.io" target="_blank">Junbo Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%AC%E7%A7%91%E6%8E%A8%E5%85%8D/">本科推免</a></div><div class="post_share"><div class="social-share" data-image="/image/avatar.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/05/05/Python-argparse/" title="Python-argparse"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python-argparse</div></div></a></div><div class="next-post pull-right"><a href="/2024/05/05/%E7%94%B5%E8%B7%AF&amp;%E6%95%B0%E7%94%B5&amp;%E6%A8%A1%E7%94%B5/" title="电路&amp;数电&amp;模电"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">电路&amp;数电&amp;模电</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/05/05/%E7%94%B5%E8%B7%AF&%E6%95%B0%E7%94%B5&%E6%A8%A1%E7%94%B5/" title="电路&amp;数电&amp;模电"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-05</div><div class="title">电路&amp;数电&amp;模电</div></div></a></div><div><a href="/2024/05/05/%E8%87%AA%E6%8E%A7%E4%B8%8E%E7%8E%B0%E6%8E%A7/" title="自控与现控"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-05</div><div class="title">自控与现控</div></div></a></div><div><a href="/2024/05/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E7%A1%95/" title="计算机学硕面试准备"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-05</div><div class="title">计算机学硕面试准备</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.jpg" onerror="this.onerror=null;this.src='/image/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Junbo Dong</div><div class="author-info__description">平静的大海培养不出优秀的水手</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Junb0Dong"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Junb0Dong" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:junbodong0628@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本站于2024年5月2日投入运行 :)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">模拟电子电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.0.1.</span> <span class="toc-text">第一章 绪论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-number">1.0.2.</span> <span class="toc-text">第二章 运算放大器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BA%8C%E6%9E%81%E7%AE%A1%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E7%94%B5%E8%B7%AF"><span class="toc-number">1.0.3.</span> <span class="toc-text">第三章 二极管及其基本电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%89%E6%9E%81%E7%AE%A1%E5%8F%8A%E5%85%B6%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text">第四章 场效应三极管及其放大电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%8F%8C%E6%9E%81%E7%BB%93%E5%9E%8B%E4%B8%89%E6%9E%81%E7%AE%A1%EF%BC%88BJT%EF%BC%89%E5%8F%8A%E5%85%B6%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF"><span class="toc-number">1.0.5.</span> <span class="toc-text">第五章 双极结型三极管（BJT）及其放大电路</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/Anaconda%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Anaconda学习笔记">Anaconda学习笔记</a><time datetime="2024-05-05T13:56:00.000Z" title="发表于 2024-05-05 21:56:00">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/Python-argparse/" title="Python-argparse">Python-argparse</a><time datetime="2024-05-05T13:56:00.000Z" title="发表于 2024-05-05 21:56:00">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/" title="模拟电子电路">模拟电子电路</a><time datetime="2024-05-05T13:55:59.000Z" title="发表于 2024-05-05 21:55:59">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/%E7%94%B5%E8%B7%AF&amp;%E6%95%B0%E7%94%B5&amp;%E6%A8%A1%E7%94%B5/" title="电路&amp;数电&amp;模电">电路&amp;数电&amp;模电</a><time datetime="2024-05-05T13:55:59.000Z" title="发表于 2024-05-05 21:55:59">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/%E8%87%AA%E6%8E%A7%E4%B8%8E%E7%8E%B0%E6%8E%A7/" title="自控与现控">自控与现控</a><time datetime="2024-05-05T13:55:59.000Z" title="发表于 2024-05-05 21:55:59">2024-05-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Junbo Dong</div><div class="footer_custom_text">Hi, weclome to my blog!   Have a NICE day!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Junb0Dong/Website-Comments',
+      'data-repo-id': 'R_kgDOL3TO9A',
+      'data-category-id': 'DIC_kwDOL3TO9M4CfJs5',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },null)
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
