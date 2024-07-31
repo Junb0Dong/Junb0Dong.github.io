@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SLAM_JOURNEY | Junbo Blog</title><meta name="author" content="Junbo Dong"><meta name="copyright" content="Junbo Dong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="[TOC] 研0入门了解研究领域概况 了解研究领域的背景 由背景入手建立研究领域的框架   寻找适合的文献 找准关键术语，用不同的数据库检索文献    SLAM十四讲学习学习这本书的方法 理解算法，补习数学基础 应用实践，跟着书敲代码，调调参数 习题，建议都练习一遍，对掌握知识很有帮助  SLAM的数学描述 \begin{cases}     x_{k+1} &#x3D; f(x_k,u_k)+w_k &amp;\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SLAM_JOURNEY">
+<meta property="og:url" content="https://junb0dong.github.io/2024/05/05/SLAM_JOURNEY/index.html">
+<meta property="og:site_name" content="Junbo Blog">
+<meta property="og:description" content="[TOC] 研0入门了解研究领域概况 了解研究领域的背景 由背景入手建立研究领域的框架   寻找适合的文献 找准关键术语，用不同的数据库检索文献    SLAM十四讲学习学习这本书的方法 理解算法，补习数学基础 应用实践，跟着书敲代码，调调参数 习题，建议都练习一遍，对掌握知识很有帮助  SLAM的数学描述 \begin{cases}     x_{k+1} &#x3D; f(x_k,u_k)+w_k &amp;\">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://junb0dong.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2024-05-05T03:36:47.000Z">
+<meta property="article:modified_time" content="2024-07-31T08:15:41.676Z">
+<meta property="article:author" content="Junbo Dong">
+<meta property="article:tag" content="SLAM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://junb0dong.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/image/logo.png"><link rel="canonical" href="https://junb0dong.github.io/2024/05/05/SLAM_JOURNEY/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Junbo Dong","link":"链接: ","source":"来源: Junbo Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SLAM_JOURNEY',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-31 16:15:41'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.jpg" onerror="onerror=null;src='/image/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/image/top_image.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Junbo Blog"><span class="site-name">Junbo Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SLAM_JOURNEY</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-05T03:36:47.000Z" title="发表于 2024-05-05 11:36:47">2024-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-31T08:15:41.676Z" title="更新于 2024-07-31 16:15:41">2024-07-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/SLAM%E5%AD%A6%E4%B9%A0/">SLAM学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/SLAM%E5%AD%A6%E4%B9%A0/SLAM%E5%9F%BA%E7%A1%80/">SLAM基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SLAM_JOURNEY"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>[TOC]</p>
+<h1 id="研0入门"><a href="#研0入门" class="headerlink" title="研0入门"></a>研0入门</h1><h2 id="了解研究领域概况"><a href="#了解研究领域概况" class="headerlink" title="了解研究领域概况"></a>了解研究领域概况</h2><ol>
+<li>了解研究领域的背景</li>
+<li>由背景入手建立研究领域的框架</li>
+<li></li>
+</ol>
+<h3 id="寻找适合的文献"><a href="#寻找适合的文献" class="headerlink" title="寻找适合的文献"></a>寻找适合的文献</h3><ol>
+<li>找准关键术语，用不同的数据库检索文献 </li>
+</ol>
+<hr>
+<h2 id="SLAM十四讲学习"><a href="#SLAM十四讲学习" class="headerlink" title="SLAM十四讲学习"></a>SLAM十四讲学习</h2><h3 id="学习这本书的方法"><a href="#学习这本书的方法" class="headerlink" title="学习这本书的方法"></a>学习这本书的方法</h3><ol>
+<li><strong>理解算法</strong>，补习数学基础</li>
+<li><strong>应用实践</strong>，跟着书敲代码，调调参数</li>
+<li><strong>习题</strong>，建议都练习一遍，对掌握知识很有帮助</li>
+</ol>
+<h3 id="SLAM的数学描述"><a href="#SLAM的数学描述" class="headerlink" title="SLAM的数学描述"></a>SLAM的数学描述</h3><script type="math/tex; mode=display">
+\begin{cases}
+    x_{k+1} = f(x_k,u_k)+w_k &\text{运动}\\
+    z_{k,j} = h(x_k,y_j)+v_{k,j} &\text{观测}\\
+\end{cases}</script><p>已知$(u<em>k,z</em>{k,j})\to(x_k\text{定位},y_j\text{建图})$，相当于一个状态估计问题</p>
+<h3 id="第3讲-三维空间刚体运动"><a href="#第3讲-三维空间刚体运动" class="headerlink" title="第3讲 三维空间刚体运动"></a>第3讲 三维空间刚体运动</h3><p><strong>坐标系间的欧式变换</strong></p>
+<p>使用一个旋转矩阵<strong>R</strong>和一个平移向量<strong>t</strong>完整地描述了一个欧氏空间的坐标变换</p>
+<script type="math/tex; mode=display">
+a^`=Ra+t</script><p>但上述描述经过多次变换会显得很罗嗦并存在非线性关系，因此，引入<strong>齐次坐标</strong>和<strong>变换矩阵</strong></p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+a^`\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+R & t\\
+0^T & 1
+\end{bmatrix}
+\begin{bmatrix}
+a\\1
+\end{bmatrix}
+\overset{\text{def}}{=}
+T
+\begin{bmatrix}
+a\\1
+\end{bmatrix}</script><p>这样使得整个变系为线性关系，其中矩阵<strong>T</strong>称为<strong>变换矩阵</strong></p>
+<p><u>关于四元数旋转，矩阵的迹还没有搞懂—2023.10.20</u></p>
+<h4 id="useGeometry例程理解"><a href="#useGeometry例程理解" class="headerlink" title="useGeometry例程理解"></a>useGeometry例程理解</h4><p>针对<code>useGeometry</code>例程，主要作用在于</p>
+<blockquote>
+<ol>
+<li>设定旋转向量（旋转角度，沿哪个轴旋转</li>
+<li>由旋转向量得到旋转矩阵</li>
+<li>使用Angle Axis和旋转矩阵进行坐标变换</li>
+<li>欧拉角的转换（由旋转向量直接转换）</li>
+<li>将旋转向量转换为欧式变换矩阵进行坐标变换</li>
+<li>使用四元数即进行坐标变换（也由旋转向量转换而来）</li>
+</ol>
+</blockquote>
+<h4 id="plotTrajectory例程理解"><a href="#plotTrajectory例程理解" class="headerlink" title="plotTrajectory例程理解"></a>plotTrajectory例程理解</h4><p><code>Isometry3d</code>是Eigen库中的一个类，用于表示三维空间中的等距变换（Isometry）。等距变换是一种保持距离和角度不变的变换，它包括平移和旋转。</p>
+<p><code>Quaterniond</code>是Eigen库中的一个类，用于表示四元数（Quaternion）。四元数是一种数学工具，用于表示旋转或姿态的一种方式。与欧拉角和旋转矩阵相比，四元数具有一些优点，例如不存在万向锁问题，具有更高的计算效率等。</p>
+<p>对于<code>plotTrajectory</code>程序，程序思路如下</p>
+<blockquote>
+<ol>
+<li>定义vector类型的poses用于存储变换矩阵</li>
+<li>对每个时间的目标进行旋转(Quaterniond)和平移（pretranslate）</li>
+<li>绘制轨迹</li>
+</ol>
+</blockquote>
+<p>对于<code>DrawTrajectory</code>函数，理解如下</p>
+<blockquote>
+<p>先往下看吧，这段代码貌似不那么重要~</p>
+</blockquote>
+<h3 id="第4讲-李群与李代数"><a href="#第4讲-李群与李代数" class="headerlink" title="第4讲 李群与李代数"></a>第4讲 李群与李代数</h3><h4 id="李群与李代数基础"><a href="#李群与李代数基础" class="headerlink" title="李群与李代数基础"></a>李群与李代数基础</h4><p>理解了李群和李代数的概念，掌握SO(3)、SE(3)与对应李代数的表示方式</p>
+<p>三维旋转矩阵构成了特殊正交群SO(3)，变换矩阵构成了特殊欧式群SE(3)</p>
+<ul>
+<li>对于只有一个（良好的）运算的集合，我们称作<strong>群</strong></li>
+</ul>
+<p>由$RR^T=I$进行求导，得到了$exp(\phi_0^{\land)}=R$</p>
+<p>对于SO(3)上的指数映射是将$exp(\phi^{\land})=\sum_{n=0}^{\infty}\frac{1}{n!}(\phi^{\land})^n$，再通过将$\phi$分解为模长$\theta$和方向$a$对其泰勒展开进行化简，最后得到和罗德里格斯公式一样的式子</p>
+<ul>
+<li>但遗憾的是并不是每个旋转矩阵$R$都能找到唯一的$\phi$，指数映射只是一个满射，并不是单射。类似于第三讲的<u>万向锁问题</u>？</li>
+<li>如果我们把旋转角度固定到$±\pi$之间，那么李群和李代数元素是一一对应的</li>
+</ul>
+<p>SE(3)上的指数映射同理，从而得到李群与李代数的三维旋转和三维变换的对应关系，见书p81</p>
+<h4 id="李代数求导与扰动模型"><a href="#李代数求导与扰动模型" class="headerlink" title="李代数求导与扰动模型"></a>李代数求导与扰动模型</h4><p><strong>近似公式</strong></p>
+<p>在李代数上进行加法运算并不能对应SO(3)的两个矩阵乘积。但是，当$\phi_1$或$\phi_2$为小量时，小量二次以上的项都可以被忽略。此时，BCH拥有线性近似表达：</p>
+<script type="math/tex; mode=display">
+ln(exp(\phi_1^{\land})exp(\phi_2^{\land}))^{\vee}\approx\begin{cases}J_l(\phi_2)^{-1}\phi_1+\phi_2，当\phi_1为小量\\J_r(\phi_1)^{-1}\phi_2+\phi_1，当\phi_2为小量\end{cases}</script><p>对于某个旋转R，对应的李代数为$\phi$。我们给它左乘一个微小旋转，记作$\Delta R$，对应的李代数为$\Delta\phi$。那么，在李群上，得到的结果就是$\Delta R*R$，而在李代数上，根据BCH近似，为$J_l^{-1}(\phi)\Delta\phi+\phi$。合并起来，可以写成：</p>
+<script type="math/tex; mode=display">
+exp(\Delta\phi^{\land})exp(\phi^{\land})=exp((\phi+J_l^{-1}(\phi)\Delta\phi)^{\land})</script><p>反之亦然</p>
+<script type="math/tex; mode=display">
+exp((\phi+\Delta\phi)^{\land}) = exp((J_l\Delta\phi)^{\land})exp(\phi^{\land})=exp(\phi^{\land})exp((J_r\Delta\phi)^{\land})</script><p><strong>李代数求导</strong></p>
+<h3 id="第7讲-视觉里程计1"><a href="#第7讲-视觉里程计1" class="headerlink" title="第7讲 视觉里程计1"></a>第7讲 视觉里程计1</h3><p>SLAM系统分为前端和后端，</p>
+<hr>
+<h2 id="Linux操作系统"><a href="#Linux操作系统" class="headerlink" title="Linux操作系统"></a>Linux操作系统</h2><p>SLAM十四讲使用ubuntu20.04操作系统为基础。在Windows里面，设置不好设备，您可以骂它，在Linux里面，如果设置好设备，您要感激它！</p>
+<p>Linux系统由于是开源的操作系统，所以他的程序代码可以被修改成适合在各种机器、不同的硬件上运行。<u>Linux的可移植性</u></p>
+<h3 id="Linux的文件权限与目录配置"><a href="#Linux的文件权限与目录配置" class="headerlink" title="Linux的文件权限与目录配置"></a>Linux的文件权限与目录配置</h3><img src="/2024/05/05/SLAM_JOURNEY/image-20240505113554285.png" class="" title="image-20240505113554285">
+<p>使用<code>ls -al</code>命令查看文件属性，<a target="_blank" rel="noopener" href="https://foxgrin.github.io/posts/26833/">Linux的文件权限与目录配置</a></p>
+<h3 id="遇到的一些错误和问题"><a href="#遇到的一些错误和问题" class="headerlink" title="遇到的一些错误和问题"></a>遇到的一些错误和问题</h3><ol>
+<li><p>cmake后没有make出现error </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash: fg: %: 无此任务</span><br></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<p>cmake后再添加<strong>make</strong></p>
+</li>
+<li><p>添加库文件会报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">6 |         printHello();</span><br><span class="line">  |         ^~~~~~~~~~</span><br><span class="line">  |         printHELLO</span><br></pre></td></tr></table></figure>
+<p>检查源文件发现没有错误，检查库文件后才发现把函数名称定义错误</p>
+<blockquote>
+<p> 解决办法:在头文件中拼写错误的函数名称修正</p>
+</blockquote>
+</li>
+<li><p>KDevelop中断点在边框中用鼠标点不了</p>
+<p>解决办法，光标选中某一行使用<strong>Ctrl+Alt+B</strong>快捷键来打<strong>断点</strong></p>
+</li>
+<li><p>针对某一程序Excute不能输出结果不正常，为另一个程序的输出结果，<strong>是由于Run</strong>中的<strong>Configure Launch</strong>的配置问题</p>
+<blockquote>
+<p>解决办法：修改Configure Launch中的target project为目标程序文件</p>
+</blockquote>
+</li>
+<li><p>KDevelop如何建立新工程?</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44436677/article/details/106268768?app_version=6.1.7&amp;csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%22106268768%22%2C%22source%22%3A%22weixin_53370601%22%7D&amp;utm_source=app">KDevelop建立新工程-CSDN</a></p>
+</li>
+<li><p>安装好Pangolin库后，运行ch3中的plotJecttory程序时，报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">error while loading shared libraries: libpango_windowing.so: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 解决办法：是由于动态链接库异常，没有正确的加载共享库Terminal输入<code>sudo ldconfig</code>即可</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/kingkingsssss/article/details/130861026?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169892548716800185877883%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=169892548716800185877883&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-130861026-null-null.142^v96^pc_search_result_base3&amp;utm_term=error%20while%20loading%20shared%20libraries%3A%20libpango_windowing.so%3A%20cannot%20open%20shared%20object%20file%3A%20No%20such%20file%20or%20directory&amp;spm=1018.2226.3001.4187">CSDN解决办法</a></p>
+</li>
+<li><p>KDevelop设置C++11标准</p>
+<blockquote>
+<p>CMAKE_CXX_FLAGS -&gt; -std=c++11</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>查看eigen3版本，对于其他库更换名字即可</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pkg-config --modversion eigen3 </span><br></pre></td></tr></table></figure>
+<p><code>apt-get</code>命令是一个功能强大且免费的包管理命令行程序，用于与Ubuntu的APT（高级打包工具）库配合执行新软件包的安装、删除现有软件包、升级现有软件包、甚至用于升级整个操作系统。</p>
+<ul>
+<li><p>更新系统包</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>升级系统包</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>查看Linux内核版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<p>关机命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">poweroff</span><br><span class="line">shutdown -h now</span><br></pre></td></tr></table></figure>
+<p>重启命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p>查看ubuntu版本号</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
+<p><strong>vim命令</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">vim命令</a></p>
+<hr>
+<h2 id="数学基础问题"><a href="#数学基础问题" class="headerlink" title="数学基础问题"></a>数学基础问题</h2><h3 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h3><p><strong>反对称矩阵</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CSSDCC/article/details/121653596">SLAM反对称矩阵</a></p>
+<p>通过<strong>反对称矩阵</strong>将向量的乘法变为线性运算</p>
+<blockquote>
+<p>反对称矩阵满足</p>
+<script type="math/tex; mode=display">
+A^T=-A</script></blockquote>
+<ul>
+<li>斜对称矩阵自身相乘的积是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/對稱矩陣">对称矩阵</a>。</li>
+<li>任意矩阵$A,A^T-A$是斜对称矩阵。</li>
+<li>若是$A$是斜对称矩阵，$x$是向量，$x^TAx=0$</li>
+<li>斜对称矩阵的主对角线元素必是零，所以其<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/跡數">迹数</a>为零。</li>
+</ul>
+<p><strong>单位正交基</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jakob_Hu/article/details/90813435">线性代数(14)——正交性、标准正交基和投影</a></p>
+<p>一个n维空间中任何一组线性无关的向量，都是这个n维空间的一组基。当这组基的向量两两垂直，则称为正交基。</p>
+<p>三维空间中的单位正交基可以表示为一个 3x3 的矩阵，其中每一列代表一个基向量。假设单位正交基的三个基向量分别为 u, v, w，它们可以组成以下矩阵形式：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 
+u₁ & v₁ & w₁\\
+u₂ & v₂ & w₂\\
+u₃ & v₃ & w₃ 
+\end{bmatrix}</script><p>其中 u₁, u₂, u₃ 是向量 u 的三个分量，v₁, v₂, v₃ 是向量 v 的三个分量，w₁, w₂, w₃ 是向量 w 的三个分量。</p>
+<p>具体表示如下所示：</p>
+<script type="math/tex; mode=display">
+x\begin{bmatrix} 1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1 \end{bmatrix}</script><p><strong>正交矩阵</strong></p>
+<ol>
+<li>所有的列向量都是单位正交向量</li>
+<li>所有的行向量都是单位正交向量</li>
+<li>detA = +1 或detA =-1</li>
+<li>若detA =1，则A为n维旋转矩阵 ()，旋转矩阵X旋转矩阵=旋转矩阵</li>
+<li>向量X的范数(Norm) 或欧拉长度（Euclidean Length ）</li>
+<li>正交矩阵对向量进行正交变换，且正交变换不改变向量的长度(范数)：设X的正交变换为AX，则AX的范数为：由此可见AX的范数与X的范数相等</li>
+</ol>
+<h3 id="概率论与数理统计"><a href="#概率论与数理统计" class="headerlink" title="概率论与数理统计"></a>概率论与数理统计</h3><hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://junb0dong.github.io">Junbo Dong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://junb0dong.github.io/2024/05/05/SLAM_JOURNEY/">https://junb0dong.github.io/2024/05/05/SLAM_JOURNEY/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://junb0dong.github.io" target="_blank">Junbo Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SLAM/">SLAM</a></div><div class="post_share"><div class="social-share" data-image="/image/avatar.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/" title="HEXO展示pdf"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HEXO展示pdf</div></div></a></div><div class="next-post pull-right"><a href="/2024/05/04/HEXO%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93/" title="HEXO更改字体"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HEXO更改字体</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.jpg" onerror="this.onerror=null;this.src='/image/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Junbo Dong</div><div class="author-info__description">平静的大海培养不出优秀的水手</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Junb0Dong"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Junb0Dong" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:junbodong0628@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本站于2024年5月2日投入运行 :)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%940%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">研0入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3%E7%A0%94%E7%A9%B6%E9%A2%86%E5%9F%9F%E6%A6%82%E5%86%B5"><span class="toc-number">1.1.</span> <span class="toc-text">了解研究领域概况</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E6%89%BE%E9%80%82%E5%90%88%E7%9A%84%E6%96%87%E7%8C%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">寻找适合的文献</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text">SLAM十四讲学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%BF%99%E6%9C%AC%E4%B9%A6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">学习这本书的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLAM%E7%9A%84%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">SLAM的数学描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3%E8%AE%B2-%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text">第3讲 三维空间刚体运动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#useGeometry%E4%BE%8B%E7%A8%8B%E7%90%86%E8%A7%A3"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">useGeometry例程理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#plotTrajectory%E4%BE%8B%E7%A8%8B%E7%90%86%E8%A7%A3"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">plotTrajectory例程理解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%AE%B2-%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0"><span class="toc-number">1.2.4.</span> <span class="toc-text">第4讲 李群与李代数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">李群与李代数基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%8E%E4%BB%A3%E6%95%B0%E6%B1%82%E5%AF%BC%E4%B8%8E%E6%89%B0%E5%8A%A8%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">李代数求导与扰动模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%AE%B2-%E8%A7%86%E8%A7%89%E9%87%8C%E7%A8%8B%E8%AE%A11"><span class="toc-number">1.2.5.</span> <span class="toc-text">第7讲 视觉里程计1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.</span> <span class="toc-text">Linux操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%9A%84%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">Linux的文件权限与目录配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E5%92%8C%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.2.</span> <span class="toc-text">遇到的一些错误和问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.3.</span> <span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">数学基础问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">线性代数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text">概率论与数理统计</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/" title="HEXO展示pdf">HEXO展示pdf</a><time datetime="2024-05-05T07:16:54.000Z" title="发表于 2024-05-05 15:16:54">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/SLAM_JOURNEY/" title="SLAM_JOURNEY">SLAM_JOURNEY</a><time datetime="2024-05-05T03:36:47.000Z" title="发表于 2024-05-05 11:36:47">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/04/HEXO%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93/" title="HEXO更改字体">HEXO更改字体</a><time datetime="2024-05-04T15:27:17.000Z" title="发表于 2024-05-04 23:27:17">2024-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/04/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="Hexo插入图片">Hexo插入图片</a><time datetime="2024-05-04T13:13:32.000Z" title="发表于 2024-05-04 21:13:32">2024-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/03/C++The-Cherno-Day1/" title="C++(The Cherno)-Day1">C++(The Cherno)-Day1</a><time datetime="2024-05-03T12:55:59.000Z" title="发表于 2024-05-03 20:55:59">2024-05-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Junbo Dong</div><div class="footer_custom_text">Hi, weclome to my blog!   Have a NICE day!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Junb0Dong/Website-Comments',
+      'data-repo-id': 'R_kgDOL3TO9A',
+      'data-category-id': 'DIC_kwDOL3TO9M4CfJs5',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },null)
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Junbo Blog</title><meta name="author" content="Junbo Dong"><meta name="copyright" content="Junbo Dong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="骏博的博客，用于存放笔记，更新些技术问题和有趣的东西">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Junbo Blog">
+<meta property="og:url" content="https://junb0dong.github.io/index.html">
+<meta property="og:site_name" content="Junbo Blog">
+<meta property="og:description" content="骏博的博客，用于存放笔记，更新些技术问题和有趣的东西">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://junb0dong.github.io/image/avatar.jpg">
+<meta property="article:author" content="Junbo Dong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://junb0dong.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/image/logo.png"><link rel="canonical" href="https://junb0dong.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Junbo Dong","link":"链接: ","source":"来源: Junbo Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Junbo Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-31 20:12:46'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.jpg" onerror="onerror=null;src='/image/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('/image/top_image.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Junbo Blog"><span class="site-name">Junbo Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Junbo Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Junb0Dong" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:junbodong0628@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/" title="HEXO展示pdf">HEXO展示pdf</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-05T07:16:54.000Z" title="发表于 2024-05-05 15:16:54">2024-05-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HEXO%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97/">HEXO建站指南</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/HEXO/">HEXO</a></span></div><div class="content">
+
+	
+    
+	
+
+
+
+教程Hexo博客 | Hexo竟然可以展示PDF
+一遍成功，随便放了个pdf上去
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/05/SLAM_JOURNEY/" title="SLAM_JOURNEY">SLAM_JOURNEY</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-05T03:36:47.000Z" title="发表于 2024-05-05 11:36:47">2024-05-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/SLAM%E5%AD%A6%E4%B9%A0/">SLAM学习</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/SLAM%E5%AD%A6%E4%B9%A0/SLAM%E5%9F%BA%E7%A1%80/">SLAM基础</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SLAM/">SLAM</a></span></div><div class="content">[TOC]
+研0入门了解研究领域概况
+了解研究领域的背景
+由背景入手建立研究领域的框架
+
+
+寻找适合的文献
+找准关键术语，用不同的数据库检索文献 
+
+
+SLAM十四讲学习学习这本书的方法
+理解算法，补习数学基础
+应用实践，跟着书敲代码，调调参数
+习题，建议都练习一遍，对掌握知识很有帮助
+
+SLAM的数学描述
+\begin{cases}
+    x_{k+1} = f(x_k,u_k)+w_k &\text{运动}\\
+    z_{k,j} = h(x_k,y_j)+v_{k,j} &\text{观测}\\
+\end{cases}已知$(uk,z{k,j})\to(x_k\text{定位},y_j\text{建图})$，相当于一个状态估计问题
+第3讲 三维空间刚体运动坐标系间的欧式变换
+使用一个旋转矩阵R和一个平移向量t完整地描述了一个欧氏空间的坐标变换
+
+a^`=Ra+t但上述描述经过多次变换会显得很罗嗦并存在非线性关系，因此，引入齐次坐标和变换矩阵
+
+\begin{bmatrix}
+a^`\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+R & t\\
+0^ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/04/HEXO%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93/" title="HEXO更改字体">HEXO更改字体</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-04T15:27:17.000Z" title="发表于 2024-05-04 23:27:17">2024-05-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HEXO%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97/">HEXO建站指南</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/HEXO/">HEXO</a></span></div><div class="content">HEXO更改字体hexo自带的字体很不好看，可能是创始人是台湾的原因？字体有一种简繁之间的感觉，看着有点别扭，于是想着更改一下字体。
+参考教程：
+如何修改Hexo主题：Butterfly网站字体
+【Hexo】自定义字体
+参考以上教程，我是这么操作的：
+
+在/source目录下创建存储字体的文件夹font和存储css的文件夹css
+
+字体网站下载喜欢的字体，我用的是谷歌字体，将下载好的字体存储到/source/font文件夹中
+
+在/source/css文件夹中创建文件custom.css
+
+编写custom.css文件
+@font-face &#123;    /* 为载入的字体取名字(随意) */    font-family: &#x27;Junbo Font&#x27;;	    /* 字体文件地址(相对或者绝对路径都可以) */    src: url(&#x27;/font/sunny-spells-basic-font/SunnySpellsBasicRegular-Yz1Wv.ttf&#x27;) format(&quot;truetype&quot;);    /* 定 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/04/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="Hexo插入图片">Hexo插入图片</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-04T13:13:32.000Z" title="发表于 2024-05-04 21:13:32">2024-05-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HEXO%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97/">HEXO建站指南</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/HEXO/">HEXO</a></span></div><div class="content">HEXO 插入图片在写笔记的时候插入图片上传到网站发现图片不能在网站上显示，第一时间想的是路径问题。
+但是html的路径和主机中的路径又有差别，这其中是怎么联系起来的还不知道，于是上网找相关教程，发现两个比较好的教程（我已试验成功）如下：
+hexo博客中插入图片失败——解决思路及个人最终解决办法 强烈推荐这个
+hexo博客显示markdown路径的图片
+总结为一下几步：
+
+typora或者你自己mardown软件图像设置如下
+
+
+修改_config.yml中的post_asset_folder: true
+
+在终端中输入npm install hexo-image-link --save下载相关插件
+
+将写好的笔记和文件夹复制到source/_posts文件夹中即可，最后要注意在笔记的最上端写一些yml如下：
+title: Hexo插入图片top: falsecover: falsetoc: truemathjax: falsedate: 2024-05-04 21:13:32author:img:coverImg:password:summary:tags: HEXOcategori ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/03/C++The-Cherno-Day1/" title="C++(The Cherno)-Day1">C++(The Cherno)-Day1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-03T12:55:59.000Z" title="发表于 2024-05-03 20:55:59">2024-05-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-%E5%AD%A6%E4%B9%A0/">C++学习</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-%E5%AD%A6%E4%B9%A0/C/">C++</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/C/">C++</a></span></div><div class="content">C++(The Cherno)-Day1How C++ WorksC++是一种功能强大的编程语言，它的工作原理涉及编译和链接过程。编译器将C++源代码文件转换为目标代码，然后链接器将目标文件组合成可执行文件。下面是C++编译和链接过程的详细解释：
+预处理预处理：预处理器处理C++源代码文件，处理#include和#define等预处理指令。输出是一个不包含预处理指令的“纯”C++文件。
+
+预处理在编译之前就已完成，以#开头，实现了包含各种库/宏定义以便在接下来的编程中更好的使用库函数/宏定义
+
+// 示例代码#include &lt;iostream&gt; //预处理int main() &#123;    std::cout &lt;&lt; &quot;Hello, World!&quot;;    return 0;&#125;
+编译编译（Compiling）：编译器将预处理器的输出转换为汇编代码，然后将其组装成目标文件。目标文件包含编译的代码和符号定义。
+
+ 编译由编译器完成，在VS中编译器编译（快捷键Ctrl+F7）生成.obj文件
+
+g++ -c hello.cpp -o ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/02/Hexo%E6%8F%90%E4%BA%A4git%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" title="Hexo提交git时遇到的问题">Hexo提交git时遇到的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-02T09:25:32.000Z" title="发表于 2024-05-02 17:25:32">2024-05-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HEXO%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97/">HEXO建站指南</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/HEXO/">HEXO</a></span></div><div class="content">Hexo 提交git时遇到错误在hexo d阶段时遇到如下错误
+
+fatal: unable to access ‘https://github.com/Junb0Dong/Junb0Dong.github.io.git/‘: Failed to connect to github.com port 443 after 21107 ms: Couldn’t connect to se rver FATAL Something’s wrong. Maybe you can find the solution here: https://hexo.io/d ocs/troubleshooting.html Error: Spawn failed at ChildProcess. (C:\Users\20200\Desktop\hexo\blog\node_modules\h exo-deployer-git\node_modules\hexo-util\lib\spawn.js:51:21) at ChildProcess.emit (node:events:518:28) at cp.e ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/02/CMake%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7/" title="CMake编译工具">CMake编译工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-02T08:14:46.000Z" title="发表于 2024-05-02 16:14:46">2024-05-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-%E5%AD%A6%E4%B9%A0/">C++学习</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91/">编译</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/C-%E5%AD%A6%E4%B9%A0/">C++学习</a></span></div><div class="content">对于具有多个源文件和头文件的工程而言，g++的编译效率是很低的，CMake的出现解决了这一难题，CMake文件将编译过程和编译的选项集合在一个文件中进行编译，这大大的提升了代码编译与调试的效率，下面我们来了解一下CMake的基础知识并实践。
+CMake编译工具
+CMake是一个跨平台的安装编译工具，可以用简单的语句来描述所有平台的安装(编译过程)。
+CMake可以说已经成为大部分C++开源项目标配
+
+CMake的语法特性
+基本语法格式：指令(参数 1 参数 2…)参数使用括弧括起参数之间使用空格或分号分开
+指令是大小写无关的，参数和变量是大小写相关的
+
+set(HELLO hello.cpp)add_executable(hello main.cpp hello.cpp)ADD_EXECUTABLE(hello main.cpp $&#123;HELLO&#125;)
+
+变量使用${}方式取值，但是在 IF 控制语句中是直接使用变量名
+
+重要指令和CMake常用变量重要指令
+cmake_minimum_required    指定CMake的最小版本要求
+
+语法： cmake_mini ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.jpg" onerror="this.onerror=null;this.src='/image/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Junbo Dong</div><div class="author-info__description">平静的大海培养不出优秀的水手</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Junb0Dong"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Junb0Dong" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:junbodong0628@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本站于2024年5月2日投入运行 :)</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/" title="HEXO展示pdf">HEXO展示pdf</a><time datetime="2024-05-05T07:16:54.000Z" title="发表于 2024-05-05 15:16:54">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/SLAM_JOURNEY/" title="SLAM_JOURNEY">SLAM_JOURNEY</a><time datetime="2024-05-05T03:36:47.000Z" title="发表于 2024-05-05 11:36:47">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/04/HEXO%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93/" title="HEXO更改字体">HEXO更改字体</a><time datetime="2024-05-04T15:27:17.000Z" title="发表于 2024-05-04 23:27:17">2024-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/04/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="Hexo插入图片">Hexo插入图片</a><time datetime="2024-05-04T13:13:32.000Z" title="发表于 2024-05-04 21:13:32">2024-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/03/C++The-Cherno-Day1/" title="C++(The Cherno)-Day1">C++(The Cherno)-Day1</a><time datetime="2024-05-03T12:55:59.000Z" title="发表于 2024-05-03 20:55:59">2024-05-03</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">C++学习</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E5%AD%A6%E4%B9%A0/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91/"><span class="card-category-list-name">编译</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HEXO%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97/"><span class="card-category-list-name">HEXO建站指南</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SLAM%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">SLAM学习</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SLAM%E5%AD%A6%E4%B9%A0/SLAM%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">SLAM基础</span><span class="card-category-list-count">1</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/C-%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">C++学习</a> <a href="/tags/SLAM/" style="font-size: 1.1em; color: #999">SLAM</a> <a href="/tags/HEXO/" style="font-size: 1.5em; color: #99a9bf">HEXO</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C++</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">7</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2024-05-02T07:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">6.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-07-31T12:12:46.683Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Junbo Dong</div><div class="footer_custom_text">Hi, weclome to my blog!   Have a NICE day!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["太阳是一把金梭","月亮是一把银梭","金梭和银梭在时间中穿梭"])
+  } else {
+    document.getElementById("subtitle").textContent = "太阳是一把金梭"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
