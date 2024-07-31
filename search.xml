@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HEXO删除已发布的文章</title>
+      <link href="/2024/07/31/HEXO%E5%88%A0%E9%99%A4%E5%B7%B2%E5%8F%91%E5%B8%83%E7%9A%84%E6%96%87%E7%AB%A0/"/>
+      <url>/2024/07/31/HEXO%E5%88%A0%E9%99%A4%E5%B7%B2%E5%8F%91%E5%B8%83%E7%9A%84%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>参考<a href="https://zsyyblog.com/5d2076b3.html">Hexo如何删除已发布文章</a><br><strong>原理清晰，一遍成功</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HEXO建站指南 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HEXO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HEXO展示pdf</title>
       <link href="/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/"/>
       <url>/2024/05/05/HEXO%E5%B1%95%E7%A4%BApdf/</url>
